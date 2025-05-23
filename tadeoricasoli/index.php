@@ -197,7 +197,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <!-- Registro de visita (invisible) -->
-<img src="registrar_visita.php" style="display:none;" width="1" height="1" alt="">
   </body>
 </html>
