@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Tadeo Pedro Ricasoli</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/tpr_prada_ico.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
       <link rel="stylesheet" href="assets/css/noscript.css" />
