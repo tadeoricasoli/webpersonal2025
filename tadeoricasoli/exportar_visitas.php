@@ -1,4 +1,10 @@
 <?php
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+
 // Autenticación
 $usuario_valido = "admin";
 $contrasena_valida = "1234";
@@ -46,28 +52,59 @@ if (file_exists($archivo)) {
 
 // Exportar si se envió el formulario
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    header("Content-Type: application/vnd.ms-excel; charset=UTF-8");
-    header(
-        "Content-Disposition: attachment; filename=visitas_" .
-            date("Ymd_His") .
-            ".xls"
-    );
-    header("Pragma: no-cache");
-    header("Expires: 0");
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setTitle('Visitas');
 
-    echo "\xEF\xBB\xBF"; // UTF-8 BOM
-    echo "<table border='1'>";
-    echo "<thead><tr><th>Fecha</th><th>IP</th><th>País</th><th>Región</th><th>Ciudad</th></tr></thead><tbody>";
+    // Encabezados
+    $headers = ['Fecha', 'IP', 'País', 'Región', 'Ciudad'];
+    $sheet->fromArray($headers, NULL, 'A1');
+
+    // Datos
+    $fila = 2;
     foreach ($visitas as $v) {
-        echo "<tr>";
-        echo "<td>" . htmlspecialchars($v["fecha"]) . "</td>";
-        echo "<td>" . htmlspecialchars($v["ip"]) . "</td>";
-        echo "<td>" . htmlspecialchars($v["pais"]) . "</td>";
-        echo "<td>" . htmlspecialchars($v["region"]) . "</td>";
-        echo "<td>" . htmlspecialchars($v["ciudad"]) . "</td>";
-        echo "</tr>";
+        $sheet->setCellValue("A$fila", $v["fecha"]);
+        $sheet->setCellValue("B$fila", $v["ip"]);
+        $sheet->setCellValue("C$fila", $v["pais"]);
+        $sheet->setCellValue("D$fila", $v["region"]);
+        $sheet->setCellValue("E$fila", $v["ciudad"]);
+        $fila++;
     }
-    echo "</tbody></table>";
+
+    // Estilo encabezado: negrita, centrado y ajuste de texto
+    $headerStyleArray = [
+        'font' => ['bold' => true],
+        'alignment' => [
+            'horizontal' => Alignment::HORIZONTAL_CENTER,
+            'vertical' => Alignment::VERTICAL_CENTER,
+            'wrapText' => true,
+        ],
+    ];
+    $sheet->getStyle('A1:E1')->applyFromArray($headerStyleArray);
+
+    // Estilo para las celdas de datos: centrado, ajuste de texto, pero sin negrita
+    $dataStyleArray = [
+        'alignment' => [
+            'horizontal' => Alignment::HORIZONTAL_CENTER,
+            'vertical' => Alignment::VERTICAL_CENTER,
+            'wrapText' => true,
+        ],
+    ];
+    $lastRow = $fila - 1;
+    $sheet->getStyle("A2:E$lastRow")->applyFromArray($dataStyleArray);
+
+    // Autoajustar ancho de columnas (opcional)
+    foreach (range('A', 'E') as $col) {
+        $sheet->getColumnDimension($col)->setAutoSize(true);
+    }
+
+    // Enviar headers y salida
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment; filename="exportar_visitas.xlsx"');
+    header('Cache-Control: max-age=0');
+
+    $writer = new Xlsx($spreadsheet);
+    $writer->save('php://output');
     exit();
 }
 ?>
@@ -138,28 +175,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       z-index: 1000;
     }
     .export-float-form button {
-  background-color: transparent;
-  color: #4CAF50;
-  border: 2px solid #4CAF50; /* borde más visible */
-  width: 40px;               /* ancho fijo reducido */
-  height: 40px;              /* altura pareja */
-  font-size: 1.1em;
-  border-radius: 0.3em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-.export-float-form button:hover {
-  background-color: #4CAF50;
-  color: white;
-.export-float-form button i {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
+      background-color: transparent;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+      width: 40px;
+      height: 40px;
+      font-size: 1.1em;
+      border-radius: 0.3em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .export-float-form button:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .export-float-form button i {
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
   </style>
 </head>
 <body>
