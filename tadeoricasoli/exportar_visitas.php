@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require "vendor/autoload.php";
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -54,11 +54,11 @@ if (file_exists($archivo)) {
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
-    $sheet->setTitle('Visitas');
+    $sheet->setTitle("Visitas");
 
     // Encabezados
-    $headers = ['Fecha', 'IP', 'País', 'Región', 'Ciudad'];
-    $sheet->fromArray($headers, NULL, 'A1');
+    $headers = ["Fecha", "IP", "País", "Región", "Ciudad"];
+    $sheet->fromArray($headers, null, "A1");
 
     // Datos
     $fila = 2;
@@ -73,38 +73,40 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Estilo encabezado: negrita, centrado y ajuste de texto
     $headerStyleArray = [
-        'font' => ['bold' => true],
-        'alignment' => [
-            'horizontal' => Alignment::HORIZONTAL_CENTER,
-            'vertical' => Alignment::VERTICAL_CENTER,
-            'wrapText' => true,
+        "font" => ["bold" => true],
+        "alignment" => [
+            "horizontal" => Alignment::HORIZONTAL_CENTER,
+            "vertical" => Alignment::VERTICAL_CENTER,
+            "wrapText" => true,
         ],
     ];
-    $sheet->getStyle('A1:E1')->applyFromArray($headerStyleArray);
+    $sheet->getStyle("A1:E1")->applyFromArray($headerStyleArray);
 
     // Estilo para las celdas de datos: centrado, ajuste de texto, pero sin negrita
     $dataStyleArray = [
-        'alignment' => [
-            'horizontal' => Alignment::HORIZONTAL_CENTER,
-            'vertical' => Alignment::VERTICAL_CENTER,
-            'wrapText' => true,
+        "alignment" => [
+            "horizontal" => Alignment::HORIZONTAL_CENTER,
+            "vertical" => Alignment::VERTICAL_CENTER,
+            "wrapText" => true,
         ],
     ];
     $lastRow = $fila - 1;
     $sheet->getStyle("A2:E$lastRow")->applyFromArray($dataStyleArray);
 
     // Autoajustar ancho de columnas (opcional)
-    foreach (range('A', 'E') as $col) {
+    foreach (range("A", "E") as $col) {
         $sheet->getColumnDimension($col)->setAutoSize(true);
     }
 
     // Enviar headers y salida
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header(
+        "Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    );
     header('Content-Disposition: attachment; filename="exportar_visitas.xlsx"');
-    header('Cache-Control: max-age=0');
+    header("Cache-Control: max-age=0");
 
     $writer = new Xlsx($spreadsheet);
-    $writer->save('php://output');
+    $writer->save("php://output");
     exit();
 }
 ?>
