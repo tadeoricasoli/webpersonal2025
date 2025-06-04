@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tadeo Pedro Ricasoli</title>
+    <link rel="icon" href="images/tpr_prada_ico.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0a84ff;
+        --background: #1c1c1e;
+        --text: #ffffff;
+        --muted: #a1a1a6;
+        --card-bg: #2c2c2ecc;
+        --border-radius: 20px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--text);
+        padding: 2rem;
+      }
+
+      header {
+        backdrop-filter: blur(10px);
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 1.5rem 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      header a {
+        text-decoration: none;
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .thumb {
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease;
+        cursor: pointer; /* para indicar que es clickeable */
+      }
+
+      .thumb:hover {
+        transform: scale(1.02);
+      }
+
+      .thumb img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--border-radius);
+      }
+
+      .thumb h2 {
+        font-size: 1rem;
+        margin: 0.5rem 1rem 0;
+      }
+
+      .thumb p {
+        font-size: 0.875rem;
+        margin: 0.5rem 1rem 1rem;
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 3rem;
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      footer h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      footer form input,
+      footer form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #3a3a3c;
+        background: #2c2c2e;
+        color: var(--text);
+        border-radius: var(--border-radius);
+      }
+
+      footer form button {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: var(--border-radius);
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .icons a {
+        margin-right: 1rem;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      /* Modal estilo iOS */
+
+      #modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(28, 28, 30, 0.95);
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2000;
+      }
+
+      #modal.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      #modal img {
+        max-width: 90vw;
+        max-height: 90vh;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(10, 132, 255, 0.7);
+        user-select: none;
+      }
+
+      #modal .close-btn {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        font-size: 2rem;
+        color: var(--primary);
+        cursor: pointer;
+        user-select: none;
+        font-weight: 700;
+        background: rgba(28, 28, 30, 0.8);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: background-color 0.2s ease;
+      }
+
+      #modal .close-btn:hover {
+        background-color: var(--primary);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>© Ricasoli Tadeo Pedro</h1>
+      <a href="#footer">Contactar</a>
+    </header>
+
+    <main class="gallery">
+      <div class="thumb" data-full="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844655/01_cxwimd.webp">
+        <img
+          src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844655/01_cxwimd.webp"
+          alt="Glaciar Perito Moreno"
+        />
+        <h2>Glaciar Perito Moreno</h2>
+        <p>
+          The Perito Moreno Glacier, located in Los Glaciares National Park in
+          Argentina, is one of the few glaciers in the world still advancing...
+        </p>
+      </div>
+      <div class="thumb" data-full="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/02_urb7ry.webp">
+        <img
+          src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/02_urb7ry.webp"
+          alt="Sarmiento de Junín"
+        />
+        <h2>Sarmiento de Junín</h2>
+        <p>
+          A passion that runs through my veins, a story lived in every match, in
+          every cheer, in every shared dream.
+        </p>
+      </div>
+      <!-- Repetir para las otras imágenes igual, con data-full -->
+
+      <!-- ... copia todos los div.thumb y agrega el atributo data-full con la URL grande -->
+    </main>
+
+    <!-- Modal para imagen a pantalla completa -->
+    <div id="modal">
+      <span class="close-btn" title="Cerrar">&times;</span>
+      <img src="" alt="Imagen ampliada" />
+    </div>
+
+    <footer id="footer">
+      <h2>Contacto</h2>
+      <form method="post" action="enviar.php">
+        <input type="text" name="name" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="4" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="icons" style="margin-top: 1.5rem">
+        <a
+          href="https://x.com/tadeoricasoli"
+          class="fab fa-x-twitter"
+          target="_blank"
+          ></a
+        >
+        <a
+          href="https://facebook.com/tadeoricasoli"
+          class="fab fa-facebook-f"
+          target="_blank"
+          ></a
+        >
+        <a
+          href="https://instagram.com/tadeoricasoli"
+          class="fab fa-instagram"
+          target="_blank"
+          ></a
+        >
+        <a
+          href="https://github.com/tadeoricasoli"
+          class="fab fa-github"
+          target="_blank"
+          ></a
+        >
+        <a
+          href="https://linkedin.com/in/tadeo-pedro-ricasoli-35030982"
+          class="fab fa-linkedin-in"
+          target="_blank"
+          ></a
+        >
+      </div>
+    </footer>
+
+    <script>
+      const modal = document.getElementById('modal');
+      const modalImg = modal.querySelector('img');
+      const closeBtn = modal.querySelector('.close-btn');
+
+      // Abrir modal al hacer click en la miniatura
+      document.querySelectorAll('.thumb').forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          const src = thumb.getAttribute('data-full');
+          modalImg.src = src;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Evita scroll al abrir
+        });
+      });
+
+      // Cerrar modal con botón
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        modalImg.src = '';
+        document.body.style.overflow = 'auto';
+      });
+
+      // Cerrar modal con click fuera de la imagen
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          modalImg.src = '';
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // Cerrar modal con tecla Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          modalImg.src = '';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    </script>
+  </body>
+</html>
