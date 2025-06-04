@@ -158,7 +158,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://ar.linkedin.com/in/tadeo-pedro-ricasoli-35030982" target="_blank" class="icon brands fa-linkedin-in">
+                  <a href="https://www.linkedin.com/in/tadeoricasoli/" target="_blank" class="icon brands fa-linkedin-in">
                     <span class="label">LinkedIn</span>
                   </a>
                 </li>
