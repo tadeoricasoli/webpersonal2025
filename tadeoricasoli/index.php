@@ -60,7 +60,7 @@
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/03_nwerh2.webp" alt="FLY" loading="lazy" width="300" height="200" />
           </a>
           <h2>FLY</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <p>Flip the limits.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/04_uafpo4.webp" class="image" loading="lazy">
@@ -73,8 +73,8 @@
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/05_hsizjh.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/05_hsizjh.webp" alt="107 VISA OPEN" loading="lazy" width="300" height="200" />
           </a>
-          <h2>107 VISA OPEN</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <h2>116 VISA OPEN</h2>
+          <p>The tournament took place from December 1-4, 2022, at the Nordelta Golf Club. American Zack Fischer won the tournament.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/06_kzskn3.webp" class="image" loading="lazy">
@@ -95,21 +95,21 @@
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844654/08_mrndg1.webp" alt="UPSIDE DOWN" loading="lazy" width="300" height="200" />
           </a>
           <h2>UPSIDE DOWN</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <p>This shot was taken in Epecuén, Buenos Aires, Argentina.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/09_bbaulk.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/09_bbaulk.webp" alt="JUJUY" loading="lazy" width="300" height="200" />
           </a>
           <h2>JUJUY</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <p>Mystical Green Heart of Jujuy – The Yungas Jungle.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844655/10_zdujp0.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844655/10_zdujp0.webp" alt="TC" loading="lazy" width="300" height="200" />
           </a>
           <h2>TC</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <p>Speed, tradition, and thunder – welcome to Turismo Carretera.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844654/11_hfvzzh.webp" class="image" loading="lazy">
@@ -123,7 +123,7 @@
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/12_zp65w1.webp" alt="B&W" loading="lazy" width="300" height="200" />
           </a>
           <h2>B&W</h2>
-          <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+          <p>Recording sessions.</p>
         </article>
       </div>
       <!-- Footer -->
