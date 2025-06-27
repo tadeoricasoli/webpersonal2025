@@ -46,7 +46,7 @@
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844655/01_cxwimd.webp" alt="Glaciar Perito Moreno" loading="lazy" width="300" height="200" />
           </a>
           <h2>Glaciar Perito Moreno</h2>
-          <p>The Perito Moreno Glacier, located in Los Glaciares National Park in Argentina, is one of the few glaciers in the world still advancing...</p>
+          <p>The Perito Moreno Glacier, located in Los Glaciares National Park in Argentina, is one of the few glaciers in the world still advancing, making it a unique and breathtaking natural wonder.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/02_urb7ry.webp" class="image" loading="lazy">
@@ -201,5 +201,5 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>
