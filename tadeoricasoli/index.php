@@ -162,6 +162,11 @@
                     <span class="label">LinkedIn</span>
                   </a>
                 </li>
+                <li>
+                  <a href="https://www.youtube.com/@tadeoricasoli" target="_blank" class="icon brands fa-youtube">
+                    <span class="label">YouTube</span>
+                  </a>
+                </li>
               </ul>
             </section>
           </div>
