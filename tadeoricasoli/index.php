@@ -19,16 +19,30 @@
         font-size: 0.9em;
         margin-top: 5px;
       }
+
+      #main:hover .thumb {
+        filter: brightness(0.5);
+        transform: scale(1);
+        z-index: 0;
+        transition: filter 0.3s ease, transform 0.3s ease;
+      }
+
+      #main .thumb:hover {
+        filter: brightness(1);
+        transform: scale(1.05);
+        z-index: 10;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      }
     </style>
   </head>
   <body class="is-preload">
-    <?php include_once "registrar_visita.php"; ?>
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Header -->
       <header id="header">
         <h1>
-          <a href="index.html">
+          <a href="https://tadeoricasoli.com">
             <strong>© Ricasoli</strong> Tadeo Pedro </a>
         </h1>
         <nav>
@@ -56,15 +70,15 @@
           <p>A passion that runs through my veins, a story lived in every match, in every cheer, in every shared dream.</p>
         </article>
         <article class="thumb">
-          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/03_nwerh2.webp" class="image" loading="lazy">
-            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/03_nwerh2.webp" alt="FLY" loading="lazy" width="300" height="200" />
+          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/v1751401847/03_c7rhkx.webp" class="image" loading="lazy">
+            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/v1751401847/03_c7rhkx.webp" alt="CRYING LIGHTNING" loading="lazy" width="300" height="200" />
           </a>
-          <h2>FLY</h2>
-          <p>Flip the limits.</p>
+          <h2>CRYING LIGHTNING</h2>
+          <p>Where the sky splits, power is born.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/04_uafpo4.webp" class="image" loading="lazy">
-            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/04_uafpo4.webp" alt="CAÑÓN DEL ATUEL" loading="lazy" width="300" height="200" />
+            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/04_uafpo4.webp" alt="CAÑÓN DEL ATUEL" loading="lazy" width="300" height="200" />
           </a>
           <h2>MENDOZA</h2>
           <p>Land of the sun and good wine... and the condors.</p>
@@ -126,6 +140,7 @@
           <p>Recording sessions.</p>
         </article>
       </div>
+      </div>
       <!-- Footer -->
       <footer id="footer" class="panel">
         <div class="inner split">
@@ -167,33 +182,33 @@
                     <span class="label">YouTube</span>
                   </a>
                 </li>
+                <li>
+                  <a href="https://open.spotify.com/user/11146905710?si=eab939c099264a8a" target="_blank" class="icon brands fa-spotify">
+                    <span class="label">Spotify</span>
+                  </a>
+                </li>
               </ul>
             </section>
           </div>
           <div>
             <section>
               <h2>Get in touch</h2>
-              <form method="post" action="enviar.php">
-                <div class="fields">
-                  <div class="field half">
-                    <input type="text" name="name" id="name" placeholder="Name" required minlength="4" />
-                  </div>
-                  <div class="field half">
-                    <input type="email" name="email" id="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|icloud\.com|aol\.com|mail\.com|live\.com|msn\.com|protonmail\.com)$" title="Please enter a valid email address (only common domains like gmail.com, yahoo.com, outlook.com, etc.) are allowed" />
-                  </div>
-                  <div class="field">
-                    <textarea name="message" id="message" rows="4" placeholder="Message" required minlength="10"></textarea>
-                  </div>
+              <form method="POST" action="enviar.php" id="contact-form">
+              <div class="fields">
+                <div class="field half">
+                  <input type="text" name="nombre" id="nombre" placeholder="Name" required />
                 </div>
-                <ul class="actions">
-                  <li>
-                    <input type="submit" value="Send" class="primary" />
-                  </li>
-                  <li>
-                    <input type="reset" value="Reset" />
-                  </li>
-                </ul>
-              </form>
+                <div class="field half">
+                  <input type="email" name="email" id="email" placeholder="e-mail" required />
+                </div>
+                <div class="field">
+                  <textarea name="mensaje" id="mensaje" placeholder="Message" rows="6" required></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send" class="primary" /></li>
+              </ul>
+            </form>
             </section>
           </div>
         </div>
@@ -206,5 +221,28 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+  <script>
+  // Deshabilitar clic derecho
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Deshabilitar teclas comunes del inspector
+ document.addEventListener('keydown', function (e) {
+  const key = e.key.toLowerCase();
+
+  if (
+    e.key === 'F12' || // F12
+    (e.ctrlKey && e.shiftKey && ['i','j','c','k','s','h','e','f'].includes(key)) || // Ctrl+Shift+ combinaciones comunes
+    (e.ctrlKey && (key === 'u' || key === 'p' || key === 's')) || // Ctrl+U/P/S
+    (e.ctrlKey && e.altKey && key === 'i') // Ctrl+Alt+I
+  ) {
+    e.preventDefault();
+    alert('Access to developer tools and source code viewing is disabled.');
+  }
+});
+</script>
+
 </body>
 </html>
