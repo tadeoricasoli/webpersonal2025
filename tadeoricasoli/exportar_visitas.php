@@ -6,8 +6,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 
-$usuario_valido = "*******";
-$contrasena_valida = "*******";
+$usuario_valido = "**********";
+$contrasena_valida = "**********";
 
 if (
     !isset($_SERVER["PHP_AUTH_USER"]) ||
@@ -37,6 +37,7 @@ if (file_exists($archivo)) {
                 "ciudad" => $partes[4] ?? "",
                 "dispositivo" => $partes[5] ?? "",
                 "so" => $partes[6] ?? "",
+                "source" => $partes[7] ?? "",
             ];
         }
     }
@@ -67,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sheet->setCellValue("E$fila", $v["ciudad"]);
         $sheet->setCellValue("F$fila", $v["dispositivo"]);
         $sheet->setCellValue("G$fila", $v["so"]);
+        $sheet->setCellValue("H$fila", $v["source"]);
         $fila++;
     }
 
@@ -92,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header(
         "Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     );
-    header('Content-Disposition: attachment; filename="visitas_export.xlsx"');
+    header('Content-Disposition: attachment; filename="exportar_visitas.xlsx"');
     header("Cache-Control: max-age=0");
 
     $writer = new Xlsx($spreadsheet);
@@ -293,6 +295,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <th>City</th>
               <th>Device</th>
               <th>OS</th>
+              <th>Source</th>
             </tr>
             <tr class="filters">
               <th>
@@ -309,6 +312,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <th><input type="text" id="filter-city" placeholder="Filter City" /></th>
               <th><input type="text" id="filter-device" placeholder="Filter Device" /></th>
               <th><input type="text" id="filter-os" placeholder="Filter OS" /></th>
+              <th><input type="text" id="filter-source" placeholder="Filter Source" /></th>
             </tr>
           </thead>
           <tbody>
@@ -321,6 +325,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
               <td><?= htmlspecialchars($v["ciudad"]) ?></td>
               <td><?= htmlspecialchars($v["dispositivo"]) ?></td>
               <td><?= htmlspecialchars($v["so"]) ?></td>
+              <td><?= htmlspecialchars($v["source"]) ?></td>
             </tr>
             <?php endforeach; ?>
           </tbody>
@@ -364,6 +369,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     const inputCity = document.getElementById("filter-city").value.toLowerCase();
     const inputDevice = document.getElementById("filter-device").value.toLowerCase();
     const inputOs = document.getElementById("filter-os").value.toLowerCase();
+    const inputSource = document.getElementById("filter-source").value.toLowerCase();
 
     const rows = Array.from(tbody.querySelectorAll("tr"));
 
@@ -376,18 +382,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       const city = cells[4].textContent.toLowerCase();
       const device = cells[5].textContent.toLowerCase();
       const os = cells[6].textContent.toLowerCase();
+      const source = cells[7].textContent.toLowerCase();
 
       const fechaFormateada = formatoFechaParaFiltro(fechaTexto);
 
       return (
-        (!inputDate || fechaFormateada === inputDate) &&
-        (!inputIp || ip.includes(inputIp)) &&
-        (!inputCountry || country.includes(inputCountry)) &&
-        (!inputRegion || region.includes(inputRegion)) &&
-        (!inputCity || city.includes(inputCity)) &&
-        (!inputDevice || device.includes(inputDevice)) &&
-        (!inputOs || os.includes(inputOs))
-      );
+  (!inputDate || fechaFormateada === inputDate) &&
+  (!inputIp || ip.includes(inputIp)) &&
+  (!inputCountry || country.includes(inputCountry)) &&
+  (!inputRegion || region.includes(inputRegion)) &&
+  (!inputCity || city.includes(inputCity)) &&
+  (!inputDevice || device.includes(inputDevice)) &&
+  (!inputOs || os.includes(inputOs)) &&
+  (!inputSource || source.includes(inputSource))
+);
     });
 
     rows.forEach(r => r.style.display = "none");
