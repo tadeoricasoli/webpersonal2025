@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+  <!-- Registro de visita invisible -->
+  <img src="registrar_visita.php" style="display: none;">
 <html lang="es">
   <head>
     <meta charset="UTF-8" />

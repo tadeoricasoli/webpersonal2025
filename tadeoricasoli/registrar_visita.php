@@ -55,6 +55,7 @@ function detectarTipoDispositivo($result)
 
 // Registrar visita
 $ip = obtenerIP();
+error_log("IP detectada: $ip");
 $logFile = "visitas.log";
 $now = time();
 $ultimoRegistro = 0;
@@ -95,9 +96,10 @@ if ($now - $ultimoRegistro > 1) {
 
     $dispositivo = detectarTipoDispositivo($result);
     $so = $result->os->toString();
+    $navegador = $result->ua->toString();
 
-    // Guardar log
-    $linea = "$fechaHora | $ip | $pais | $region | $ciudad | $dispositivo | $so" . PHP_EOL;
+    // Guardar log con navegador
+    $linea = "$fechaHora | $ip | $pais | $region | $ciudad | $dispositivo | $so | $navegador" . PHP_EOL;
     file_put_contents($logFile, $linea, FILE_APPEND);
 }
 
@@ -125,9 +127,9 @@ if (php_sapi_name() !== 'cli') {
     echo "</select> por página";
     echo "</form>";
 
-    // Tabla
+    // Tabla con columna Navegador
     echo "<table border='1' cellpadding='5' style='border-collapse:collapse; font-family:sans-serif; font-size:14px'>";
-    echo "<tr><th>Fecha</th><th>IP</th><th>País</th><th>Región</th><th>Ciudad</th><th>Dispositivo</th><th>SO</th></tr>";
+    echo "<tr><th>Fecha</th><th>IP</th><th>País</th><th>Región</th><th>Ciudad</th><th>Dispositivo</th><th>SO</th><th>Navegador</th></tr>";
 
     foreach ($lineasPaginadas as $linea) {
         $partes = explode("|", $linea);
