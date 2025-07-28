@@ -6,6 +6,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Tadeo Pedro Ricasoli</title>
+    <meta name="description" content="Shoots photos, writes code, drinks mate. Repeat.">
+
 
     <!-- Favicon -->
     <link rel="icon" href="images/tpr_prada_ico.ico" type="image/x-icon" />
