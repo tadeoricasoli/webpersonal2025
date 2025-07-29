@@ -6,8 +6,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Tadeo Pedro Ricasoli</title>
-    <meta name="description" content="Shoots photos, writes code, drinks mate. Repeat.">
-
 
     <!-- Favicon -->
     <link rel="icon" href="images/tpr_prada_ico.ico" type="image/x-icon" />
@@ -188,6 +186,11 @@
                 </li>
                 <li>
                   <a href="https://open.spotify.com/user/11146905710?si=eab939c099264a8a" target="_blank" class="icon brands fa-spotify">
+                    <span class="label">Spotify</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.reddit.com/user/tadeoricasoli" target="_blank" class="icon brands fa-reddit">
                     <span class="label">Spotify</span>
                   </a>
                 </li>
