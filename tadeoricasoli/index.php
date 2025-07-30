@@ -50,7 +50,7 @@
         <nav>
           <ul>
             <li>
-              <a href="#footer" class="icon solid fa-info-circle">Send me</a>
+              <a href="#footer" class="icon solid fa-info-circle">About</a>
             </li>
           </ul>
         </nav>
