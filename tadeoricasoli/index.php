@@ -170,7 +170,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.github.com/tadeoricasoli/" target="_blank" class="icon brands fa-github">
+                  <a href="https://www.github.com/tadeoricasoli/" target="_blank" class="icon brands fa-github-alt">
                     <span class="label">GitHub</span>
                   </a>
                 </li>
