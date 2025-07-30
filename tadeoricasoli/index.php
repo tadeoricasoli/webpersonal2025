@@ -190,7 +190,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.reddit.com/user/tadeoricasoli" target="_blank" class="icon brands fa-reddit">
+                  <a href="https://www.reddit.com/user/tadeoricasoli" target="_blank" class="icon brands fa-reddit-alien">
                     <span class="label">Spotify</span>
                   </a>
                 </li>
