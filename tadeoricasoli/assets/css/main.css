@@ -2277,3 +2277,22 @@ body.content-active img {
   user-select: none !important;
   touch-action: none !important;
 }
+
+body.content-active #main:hover .thumb,
+body.content-active #main .thumb:hover,
+body.content-active #main .thumb:active,
+body.content-active #main .thumb:focus {
+  filter: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  z-index: auto !important;
+  transition: none !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  user-select: none;
+}
+
+body.content-active #main .thumb a {
+  pointer-events: none !important;
+  cursor: default !important;
+}
