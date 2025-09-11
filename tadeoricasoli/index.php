@@ -6,16 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Tadeo Pedro Ricasoli</title>
-    <meta name="description" content="Shoots photos, writes code, drinks mate. Repeat." />
-
-    <!-- Favicon -->
+    <meta name="description" content="Shoots photos, writes code, drinks mate. Repeat.Bueh, tengo qué poner un texto largo en el meta así el motor de búsqueda de Google lo muestra. De paso les cuento qué
+    pueden ingresar haciendo click en ese link." />
     <link rel="icon" href="images/tpr_prada_ico.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
       .error-message {
         color: #ff6b6b;
@@ -62,85 +58,73 @@
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844655/01_cxwimd.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844655/01_cxwimd.webp" alt="Glaciar Perito Moreno" loading="lazy" width="300" height="200" />
           </a>
-          <h2>Glaciar Perito Moreno</h2>
-          <p>The Perito Moreno Glacier, located in Los Glaciares National Park in Argentina, is one of the few glaciers in the world still advancing, making it a unique and breathtaking natural wonder.</p>
+          <h2>GLACIAR PERITO MORENO</h2>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/02_urb7ry.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/02_urb7ry.webp" alt="Sarmiento de Junín" loading="lazy" width="300" height="200" />
           </a>
-          <h2>Sarmiento de Junín</h2>
-          <p>A passion that runs through my veins, a story lived in every match, in every cheer, in every shared dream.</p>
+          <h2>SARMIENTO DE JUNÍN</h2>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/v1751401847/03_c7rhkx.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/v1751401847/03_c7rhkx.webp" alt="CRYING LIGHTNING" loading="lazy" width="300" height="200" />
           </a>
           <h2>CRYING LIGHTNING</h2>
-          <p>Where the sky splits, power is born.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/04_uafpo4.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/04_uafpo4.webp" alt="CAÑÓN DEL ATUEL" loading="lazy" width="300" height="200" />
           </a>
           <h2>MENDOZA</h2>
-          <p>Land of the sun and good wine... and the condors.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/05_hsizjh.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/05_hsizjh.webp" alt="107 VISA OPEN" loading="lazy" width="300" height="200" />
           </a>
           <h2>116 VISA OPEN</h2>
-          <p>The tournament took place from December 1-4, 2022, at the Nordelta Golf Club. American Zack Fischer won the tournament.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/06_kzskn3.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/06_kzskn3.webp" alt="ENTRE RÍOS" loading="lazy" width="300" height="200" />
           </a>
           <h2>ENTRE RÍOS</h2>
-          <p>Cada vez me cuesta menos levantarme antes de que salga el sol.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/07_aep8d1.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/07_aep8d1.webp" alt="PITU" loading="lazy" width="300" height="200" />
           </a>
           <h2>PITU</h2>
-          <p>Yo ya la conocía, la loca baila sola en esa esquina y cuando me ve me silba melodías.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844654/08_mrndg1.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844654/08_mrndg1.webp" alt="UPSIDE DOWN" loading="lazy" width="300" height="200" />
           </a>
           <h2>UPSIDE DOWN</h2>
-          <p>This shot was taken in Epecuén, Buenos Aires, Argentina.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/09_bbaulk.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/09_bbaulk.webp" alt="JUJUY" loading="lazy" width="300" height="200" />
           </a>
           <h2>JUJUY</h2>
-          <p>Mystical Green Heart of Jujuy – The Yungas Jungle.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844655/10_zdujp0.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844655/10_zdujp0.webp" alt="TC" loading="lazy" width="300" height="200" />
           </a>
           <h2>TC</h2>
-          <p>Speed, tradition, and thunder – welcome to Turismo Carretera.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844654/11_hfvzzh.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844654/11_hfvzzh.webp" alt="FIRE BIRDS" loading="lazy" width="300" height="200" />
           </a>
           <h2>FIRE BIRDS</h2>
-          <p>¡Resistencia! Las golondrinas crean resistencia.</p>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/12_zp65w1.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/12_zp65w1.webp" alt="B&W" loading="lazy" width="300" height="200" />
           </a>
           <h2>B&W</h2>
-          <p>Recording sessions.</p>
         </article>
       </div>
       </div>
