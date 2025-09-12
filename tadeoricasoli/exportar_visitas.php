@@ -6,8 +6,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 
-$usuario_valido = "**********";
-$contrasena_valida = "**********";
+$usuario_valido = "###########";
+$contrasena_valida = "###########";
 
 if (
     !isset($_SERVER["PHP_AUTH_USER"]) ||
@@ -28,7 +28,7 @@ if (file_exists($archivo)) {
     $lineas = file($archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lineas as $linea) {
         $partes = array_map("trim", explode("|", $linea));
-        if (count($partes) >= 7) {
+        if (count($partes) >= 8) {
             $visitas[] = [
                 "fecha" => $partes[0],
                 "ip" => $partes[1],
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sheet = $spreadsheet->getActiveSheet();
     $sheet->setTitle("Visitas");
 
-    $headers = ["Date", "IP", "Country", "Region", "City", "Device", "OS"];
+    $headers = ["Date", "IP", "Country", "Region", "City", "Device", "OS", "Source"];
     $sheet->fromArray($headers, null, "A1");
 
     $fila = 2;
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $lastRow = $fila - 1;
 
-    $sheet->getStyle("A1:G1")->applyFromArray([
+    $sheet->getStyle("A1:H1")->applyFromArray([
         "font" => ["bold" => true, "color" => ["rgb" => "FFFFFF"]],
         "alignment" => ["horizontal" => Alignment::HORIZONTAL_CENTER],
         "fill" => [
@@ -83,11 +83,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ],
     ]);
 
-    $sheet->getStyle("A2:G$lastRow")->applyFromArray([
+    $sheet->getStyle("A2:H$lastRow")->applyFromArray([
         "alignment" => ["horizontal" => Alignment::HORIZONTAL_CENTER],
     ]);
 
-    foreach (range("A", "G") as $col) {
+    foreach (range("A", "H") as $col) {
         $sheet->getColumnDimension($col)->setAutoSize(true);
     }
 
