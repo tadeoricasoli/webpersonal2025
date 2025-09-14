@@ -6,8 +6,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 
-$usuario_valido = "###########";
-$contrasena_valida = "###########";
+$usuario_valido = "***********";
+$contrasena_valida = "***********";
 
 if (
     !isset($_SERVER["PHP_AUTH_USER"]) ||
@@ -21,11 +21,18 @@ if (
     exit();
 }
 
-$archivo = "visitas.log";
+// Ruta absoluta al archivo de log
+$logFile = __DIR__ . "/../logs/visitas.log";
+
+// Crear archivo si no existe
+if (!file_exists($logFile)) {
+    file_put_contents($logFile, ""); // crea vacío
+}
+
 $visitas = [];
 
-if (file_exists($archivo)) {
-    $lineas = file($archivo, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+if (file_exists($logFile)) {
+    $lineas = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lineas as $linea) {
         $partes = array_map("trim", explode("|", $linea));
         if (count($partes) >= 8) {
@@ -56,7 +63,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sheet = $spreadsheet->getActiveSheet();
     $sheet->setTitle("Visitas");
 
-    $headers = ["Date", "IP", "Country", "Region", "City", "Device", "OS", "Source"];
+    $headers = [
+        "Date",
+        "IP",
+        "Country",
+        "Region",
+        "City",
+        "Device",
+        "OS",
+        "Source",
+    ];
     $sheet->fromArray($headers, null, "A1");
 
     $fila = 2;
