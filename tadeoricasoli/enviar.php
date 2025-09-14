@@ -1,3 +1,4 @@
+
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -23,14 +24,14 @@ $email = htmlspecialchars($_POST["email"]);
 $mensaje = htmlspecialchars($_POST["mensaje"]);
 
 $mail = new PHPMailer(true);
-
 try {
     // Configuración SMTP
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = "ricasolit@gmail.com"; // tu correo
-    $mail->Password = "mmabckuqlktrbolo"; // clave de aplicación de Gmail
+    $mail->Password = "irdoficriaamqoft
+"; // clave de aplicación de Gmail
     $mail->SMTPSecure = "tls";
     $mail->Port = 587;
 

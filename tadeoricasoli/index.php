@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
   <!-- Registro de visita invisible -->
-  <img src="registrar_visita.php" style="display: none;">
+
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -36,6 +36,8 @@
     </style>
   </head>
   <body class="is-preload">
+      <?php // al inicio del <body>, sin mostrar nada al usuario:
+      include __DIR__ . "scripts/registrar_visita.php"; ?>
     <!-- Wrapper -->
     <div id="wrapper">
       <!-- Header -->
