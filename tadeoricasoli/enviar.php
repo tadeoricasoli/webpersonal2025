@@ -30,10 +30,10 @@ try {
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     $mail->Username = "ricasolit@gmail.com"; // tu correo
-    $mail->Password = "irdoficriaamqoft
-"; // clave de aplicación de Gmail
-    $mail->SMTPSecure = "tls";
-    $mail->Port = 587;
+    $mail->Password = "###################"; // clave de aplicación de Gmail
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
 
     // Emisor y receptor
     $mail->setFrom("ricasolit@gmail.com", "tadeoricasoli.com");
