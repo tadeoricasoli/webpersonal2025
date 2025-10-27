@@ -1,6 +1,4 @@
 <!DOCTYPE HTML>
-  <!-- Registro de visita invisible -->
-
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -36,9 +34,10 @@
     </style>
   </head>
   <body class="is-preload">
-      <?php // al inicio del <body>, sin mostrar nada al usuario:
-      include __DIR__ . "scripts/registrar_visita.php"; ?>
-    <!-- Wrapper -->
+    <!-- Registro invisible de visita -->
+    <img src="/../sripts/registrar_visita.php?t=<?=time()?>" style="display:none" alt="">
+
+
     <div id="wrapper">
       <!-- Header -->
       <header id="header">
@@ -93,22 +92,22 @@
           <h2>ENTRE RÍOS</h2>
         </article>
         <article class="thumb">
-          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844653/07_aep8d1.webp" class="image" loading="lazy">
-            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844653/07_aep8d1.webp" alt="PITU" loading="lazy" width="300" height="200" />
+          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/v1761569918/07_aep8d1_o7rp2i.webp" class="image" loading="lazy">
+            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/v1761570532/07_aep8d1_kgls9m.webp" alt="PITU" loading="lazy" width="300" height="200" />
           </a>
           <h2>PITU</h2>
         </article>
         <article class="thumb">
-          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844654/08_mrndg1.webp" class="image" loading="lazy">
+          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/v1746844654/08_mrndg1.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844654/08_mrndg1.webp" alt="UPSIDE DOWN" loading="lazy" width="300" height="200" />
           </a>
           <h2>UPSIDE DOWN</h2>
         </article>
         <article class="thumb">
-          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/09_bbaulk.webp" class="image" loading="lazy">
-            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/09_bbaulk.webp" alt="JUJUY" loading="lazy" width="300" height="200" />
+          <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/v1746844656/09_bbaulk.webp" class="image" loading="lazy">
+            <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/v1761570741/09_bbaulk_csswko.webp" alt="JUJUY" loading="lazy" width="300" height="200" />
           </a>
-          <h2>JUJUY</h2>
+          <h2>YUNGAS</h2>
         </article>
         <article class="thumb">
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844655/10_zdujp0.webp" class="image" loading="lazy">
@@ -126,7 +125,7 @@
           <a href="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto/v1746844656/12_zp65w1.webp" class="image" loading="lazy">
             <img src="https://res.cloudinary.com/dtmlyikjn/image/upload/f_auto,q_auto,w_800/v1746844656/12_zp65w1.webp" alt="B&W" loading="lazy" width="300" height="200" />
           </a>
-          <h2>B&W</h2>
+          <h2>RECORDING</h2>
         </article>
       </div>
       </div>
