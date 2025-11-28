@@ -6,8 +6,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 
-$usuario_valido = "***********";
-$contrasena_valida = "***********";
+$usuario_valido = "**************";
+$contrasena_valida = "**************";
 
 if (
     !isset($_SERVER["PHP_AUTH_USER"]) ||
@@ -22,7 +22,7 @@ if (
 }
 
 // Ruta absoluta al archivo de log
-$logFile = __DIR__ . "/../logs/visitas.log";
+$logFile = __DIR__ . '/visitas.log';
 
 // Crear archivo si no existe
 if (!file_exists($logFile)) {

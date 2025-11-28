@@ -35,7 +35,7 @@
   </head>
   <body class="is-preload">
     <!-- Registro invisible de visita -->
-    <img src="/../sripts/registrar_visita.php?t=<?=time()?>" style="display:none" alt="">
+    <img src="registrar_visita.php?t=<?=time()?>" style="display:none" alt="">
 
 
     <div id="wrapper">
